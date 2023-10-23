@@ -1,17 +1,11 @@
 <?php
 
 use App\Http\Controllers\AfterCartController;
-use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\CallbackInvoiceController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\InstagramController;
-use App\Http\Controllers\TwitterController;
-use App\Http\Controllers\User\ChangePasswordController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
 /*
@@ -29,9 +23,6 @@ use App\Http\Controllers\ProdukController;
 Route::get('/', [DashboardController::class, 'dashboard']);
 
 Auth::routes(['login' => false, 'register' => false]);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::resource('checkout', CartController::class)->only(['index', 'store']);
 
 Route::get('/success', [AfterCartController::class, 'success'])->name('success');
@@ -40,3 +31,4 @@ Route::post('/x/callback-invoice', CallbackInvoiceController::class);
 Route::get('/add-to-cart/{item}', [CartController::class, 'addToCart'])->name('add-to-cart');
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::view('/admin', 'pages.admin');

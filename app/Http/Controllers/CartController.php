@@ -20,10 +20,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('cart.index', [
-            'title' => 'Masukan Data Untuk Membuat Invoice',
-            'price' => 250000
-        ]);
+        return view('cart.index');
     }
 
     /**
