@@ -11,13 +11,14 @@ jobs:
       - uses: actions/checkout@v2
       - uses: up9cloud/action-rsync@master
         env:
-          HOST: 103.189.235.167
+          HOST: ${{ secrets.SSH_HOST }}
           KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          USER: final
+          PORT: ${{ secrets.SSH_PORT }}
+          USER: ${{ secrets.SSH_USER }}
           SOURCE: ./
           TARGET: /var/www/html/finpro80/
           VERBOSE: true
-          SSH_ARGS: '-p 12211 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o LogLevel=quiet'
+          SSH_ARGS: '-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o LogLevel=quiet'
           ARGS: -az --exclude=/.git/
 
           PRE_SCRIPT: |
