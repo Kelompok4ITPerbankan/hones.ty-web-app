@@ -17,7 +17,7 @@ jobs:
           SOURCE: ./
           TARGET: /var/www/html/finpro80/
           VERBOSE: true
-          SSH_ARGS: '-p 12211 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o LogLevel=quiet
+          SSH_ARGS: '-p 12211 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o LogLevel=quiet'
           ARGS: -az --exclude=/.git/
 
           PRE_SCRIPT: |
