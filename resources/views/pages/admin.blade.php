@@ -1,54 +1,30 @@
 @extends('base2')
 @section('content')
-    <div class="rectangle"></div>
-    <div class="content">
-        <h1 style="margin-left:3%">Dashboard</h1>
-        <div class="card-container">
-            <div class="card">
-                <div>
-                    <img src="/assets/image/produk.jpeg" alt="User Image" style="margin-left: -3px;height: 106px;">
-                </div>
-                <h4 style="margin-left: 30px;margin-top: 10px">Produk</h4>
-            </div>
+    
 
-            <div class="card">
-                <div>
-                    <img src="/assets/image/produk.jpeg" alt="User Image" style="margin-left: -3px;height: 106px;">
-                </div>
-                <h4 style="margin-left: 30px;margin-top: 10px">Kategori</h4>
-            </div>
 
-            <div class="card">
-                <div>
-                    <img src="/assets/image/penjualan.jpeg" alt="User Image" style="margin-left: -3px;height: 106px;">
-                </div>
-                <h4 style="margin-left: 30px;margin-top: 10px">Penjualan</h4>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Dashboard</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Grafik Penjualan</li>
+                        </ol>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Bar Chart Example
+                                    </div>
+                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
             </div>
-
         </div>
-        <br><br><br>
-        <div class="card1">
-            <table class="custom-table">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Tanggal</th>
-                        <th>Rincian Pesanan</th>
-                        <th>Total Harga</th>
-                        <th>Waktu Pemesanan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Tidak ada isi di sini, hanya ada atribut tabel -->
-                </tbody>
-            </table>
-        </div>
-        
-
-    </div>
-
 
 @endsection
-    
-
-    
+        

@@ -12,7 +12,7 @@
                 @foreach($barangs as $barang)
                 <div class="card">
                     <div style="background-color: #1DC6AB; border-radius: 10px 10px 0 0; height: 150px; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-                        <img src="{{ url('uploads') }}/{{ $barang->gambar }}" alt="..." width="150">
+                        <img src="{{ asset('storage/storage/' . $barang->gambar) }}" alt="..." width="150">
                     </div>
                     <div class="card-body">
                         <p style="font-size: 20px;margin-bottom: -1px;">{{ $barang->nama_barang }}</p>

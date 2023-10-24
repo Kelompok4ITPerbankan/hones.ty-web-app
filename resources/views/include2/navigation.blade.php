@@ -1,24 +1,53 @@
-<div class="menu-icon" id="menu-icon">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3">Admin</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+    <!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
+    <!-- Navbar-->
+    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ route('login') }}">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <a class="nav-link" href="{{ route('admin') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Dashboard
+                    </a>
+                    <a class="nav-link" href="{{ route('produk') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Produk
+                    </a>
 
-<div class="wrapper">
-    <div class="navbar" id="navbar">
-        <button class="button1">
-            <div style="display: flex; align-items: center; margin-left: 13px">
-                <img src="/assets/image/user.jpeg" alt="User Image" style="width: 30px; margin-right: 10px;">
-                <span>User Hosnesty</span>
+                    <a class="nav-link" href="{{ route('kategori') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Kategori Produk
+                    </a>
+                    <a class="nav-link" href="charts.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        Transaksi
+                    </a>
+                    <a class="nav-link" href="tables.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        Laporan
+                    </a>
+                    
+                </div>
             </div>
-        </button>      
-        <button class="button" onclick="window.location.href = '{{ route('admin') }}'">Dashboard</button>
-        <button  class="button" onclick="window.location.href = '{{ route('produk') }}'">Produk</button>
-        <button  class="button">Transaksi</button>
-        <button  class="button">Laporan</button>
-        <button  class="button">Logout</button>
+        </nav>
     </div>
-</div>
-
-
-
