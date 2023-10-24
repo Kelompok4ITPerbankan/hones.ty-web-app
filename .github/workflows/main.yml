@@ -5,19 +5,22 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  rsync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          known_hosts: unnecessary
+      - uses: up9cloud/action-rsync@master
+        env:
+          HOST: 103.189.235.167
+          KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          USER: final
+          SOURCE: ./
+          TARGET: /var/www/html/finpro80/
+          VERBOSE: true
+          SSH_ARGS: '-p 12211 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o LogLevel=quiet
+          ARGS: -az --exclude=/.git/
 
-      - name: Adding Known Hosts
-        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-    
-    - name: Deploy with rsync
-      run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/finpro80/
+          PRE_SCRIPT: |
+            echo start at:
+            date -u
+          POST_SCRIPT: "echo done at: && date -u"
