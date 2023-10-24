@@ -18,7 +18,6 @@ jobs:
           SOURCE: ./
           TARGET: /var/www/html/finpro80/
           VERBOSE: true
-          SSH_ARGS: '-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o LogLevel=quiet'
           ARGS: -az --exclude=/.git/
 
           PRE_SCRIPT: |
