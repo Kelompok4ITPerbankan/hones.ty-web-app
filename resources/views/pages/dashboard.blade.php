@@ -29,19 +29,40 @@
     </div>
 
     <!-- Cart Container -->
-    <div class="cart-container">
-        <h2 style="text-align: center">Shoping Cart</h2>
-        <!-- Daftar item di keranjang -->
-        <div id="cart-items">
-        </div>
-        <div id="cart-total">
-            <hr>
-            <strong>Total: <span id="total-amount">Rp. 0</span></strong>
-        </div>
-        <a href="http://127.0.0.1:8000/checkout" >
-            <button class="btn btn-primary" style="background-color: #FF8A00; border: none; border-radius: 10px;">Checkout</button>
-        </a>
-        
+<div class="cart-container">
+    <h2 style="text-align: center">Shoping Cart</h2>
+    <!-- Tombol Clear untuk Menghapus Semua Item -->
+
+    <!-- Daftar item di keranjang -->
+    <div id="cart-items">
     </div>
+    <div id="cart-total">
+        <hr>
+        <strong>Total: <span id="total-amount">Rp. 0</span></strong>
+    </div>
+    <a href="http://127.0.0.1:8000/checkout">
+        <button class="btn btn-primary" style="background-color: #FF8A00; border: none; border-radius: 10px;">Checkout</button>
+    </a>
+    <button class="btn btn-danger" style="background-color: red; border: none; border-radius: 10px;" onclick="clearCart()">Clear</button>
+</div>
+
+<script>
+    // Fungsi untuk menghapus semua item dari keranjang
+    function clearCart() {
+        // Hapus semua item di dalam div "cart-items"
+        document.getElementById("cart-items").innerHTML = "";
+
+        // Reset total amount menjadi 0
+        document.getElementById("total-amount").textContent = "Rp. 0";
+    }
+
+    // Fungsi untuk menambahkan item ke keranjang (seperti yang sudah Anda miliki)
+    function addToCart(namaBarang, harga) {
+        // Implementasi logika penambahan item ke keranjang
+        // Pastikan Anda telah mengimplementasikan ini sebelumnya
+    }
+</script>
+
+
 
     @endsection
