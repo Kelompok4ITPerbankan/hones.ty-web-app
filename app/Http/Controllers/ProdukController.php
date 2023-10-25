@@ -47,8 +47,14 @@ class ProdukController extends Controller
     
         $barang = Barang::findOrFail($id);
         $barang->nama_barang = $request->nama_barang;
-        $barang->kategori_id = $request->kategori_id;
-        $barang->gambar = $request->gambar;
+        
+        if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/storage', $imageName);
+            $barang->gambar = '/' . $imageName;
+        }
+
         $barang->harga = $request->harga;
         $barang->stok = $request->stok;
         $barang->save();

@@ -9,9 +9,9 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            DataTable Example
+                            DataTable Kategori Produk
                         </div>
-                        <a href="#" class="btn btn-primary" style="width: 150px; height: 40px;" data-toggle="modal" data-target="#exampleModal">
+                        <a href="#" class="btn btn-primary" style="width: 150px; height: 40px;margin-top: 10px;margin-left: 10px;" data-toggle="modal" data-target="#exampleModal">
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>
