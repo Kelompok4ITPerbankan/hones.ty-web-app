@@ -29,6 +29,7 @@ use App\Http\Controllers\KategoriController;
 
 
 Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard_produk/{id}', [DashboardController::class, 'show'])->name('dashboard.produk');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
