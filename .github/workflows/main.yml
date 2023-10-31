@@ -16,9 +16,9 @@ jobs:
           PORT: ${{ secrets.SSH_PORT }}
           USER: ${{ secrets.SSH_USER }}
           SOURCE: ./
-          TARGET: /var/www/html/finpro80/
+          TARGET: /var/www/html/finpro81/
           VERBOSE: true
-          ARGS: -az --exclude=/.git/
+          ARGS: -avz --exclude=/.git/ --exclude=.DS_Store
 
           PRE_SCRIPT: |
             echo start at:
