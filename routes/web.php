@@ -14,6 +14,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\KategoriController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,9 +28,8 @@ use App\Http\Controllers\ProdukController;
 */
 
 
-Route::get('/', [DashboardController::class, 'dashboard']);
-
-Auth::routes(['login' => false, 'register' => false]);
+Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard_produk/{id}', [DashboardController::class, 'show'])->name('dashboard.produk');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -38,5 +39,24 @@ Route::get('/success', [AfterCartController::class, 'success'])->name('success')
 Route::get('/failure', [AfterCartController::class, 'failure'])->name('failure');
 Route::post('/x/callback-invoice', CallbackInvoiceController::class);
 Route::get('/add-to-cart/{item}', [CartController::class, 'addToCart'])->name('add-to-cart');
-Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
+
+
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
+Route::post('/produk', [ProdukController::class, 'store']);
+Route::post('/kategori', [KategoriController::class, 'store']);
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori');
+Route::delete('/kategori/{id}', [KategoriController::class, 'delete'])->name('kategori.delete');
+Route::put('/kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
+Route::delete('/barang/{id}', [ProdukController::class, 'delete'])->name('barang.delete');
+Route::put('/barang/{id}', [ProdukController::class, 'update'])->name('barang.update');
+
+
+
+
+
+// Menampilkan formulir login
+Route::get('/login', [AuthController::class, 'loginForm'])->name('login.form');
+
+// Menangani proses login
+Route::post('/login', [AuthController::class, 'login'])->name('login');

@@ -2,18 +2,12 @@
 
 @section('content')
 
-
     <div class="buttonNavbar">
         <a href="{{ route('dashboard') }}" class="btn btn-primary" style="background-color: #1DC6AB; border: none; border-radius: 10px;">All</a>
-        @foreach ($kategori as $kate)
-        <a href="{{ url('/dashboard_produk')}}/{{ $kate->id_kategori }}" class="btn btn-primary" style="background-color: #1DC6AB; border: none; border-radius: 10px;">{{ $kate->nama_kategori }}</a>
-    
+        @foreach ($kategoris as $kate)
+        <a href="{{ route('dashboard.produk',$kate->id_kategori) }}" class="btn btn-primary" style="background-color: #1DC6AB; border: none; border-radius: 10px;">{{ $kate->nama_kategori }}</a>
         @endforeach
     </div>
-
-
-
-
 
     <div class="content">
         <!-- Konten Utama -->
@@ -23,7 +17,7 @@
                     <img src="{{ url('images/logo.png') }}" class="img-fluid" alt="" width="10">
                 </div>
                     
-                {{-- @if (Route::current()->getName() == 'dashboard.kategori' && $kate->id_kategori == 5) --}}
+                
                 
                 @foreach($barangs as $barang)
 
@@ -87,7 +81,5 @@
         // Pastikan Anda telah mengimplementasikan ini sebelumnya
     }
 </script>
-
-
-
-    @endsection
+    
+@endsection

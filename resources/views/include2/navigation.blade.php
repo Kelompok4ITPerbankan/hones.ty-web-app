@@ -1,24 +1,43 @@
-<div class="menu-icon" id="menu-icon">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3">Admin</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+    <!-- Navbar Search-->
+    
+</nav>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <a class="nav-link" href="{{ route('admin') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <h4>Dashboard</h4>
+                    </a>
+                    <a class="nav-link" href="{{ route('produk') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <h4>Produk</h4>
+                    </a>
 
-<div class="wrapper">
-    <div class="navbar" id="navbar">
-        <button class="button1">
-            <div style="display: flex; align-items: center; margin-left: 13px">
-                <img src="/assets/image/user.jpeg" alt="User Image" style="width: 30px; margin-right: 10px;">
-                <span>User Hosnesty</span>
+                    <a class="nav-link" href="{{ route('kategori') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <h4>Kategori Produk</h4>
+                    </a>
+                    <a class="nav-link" href="charts.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        <h4>Transaksi</h4>
+                    </a>
+                    <a class="nav-link" href="tables.html">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        <h4>Laporan</h4>
+                    </a>
+                    <a class="nav-link" href="{{ route('login') }}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <h4>Logout</h4>
+                    </a>
+                    
+                </div>
             </div>
-        </button>      
-        <button class="button" onclick="window.location.href = '{{ route('admin') }}'">Dashboard</button>
-        <button  class="button" onclick="window.location.href = '{{ route('produk') }}'">Produk</button>
-        <button  class="button">Transaksi</button>
-        <button  class="button">Laporan</button>
-        <button  class="button">Logout</button>
+        </nav>
     </div>
-</div>
-
-
-

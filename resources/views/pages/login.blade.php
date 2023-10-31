@@ -44,9 +44,12 @@
             cursor: pointer;
             width: 120px;
         }
+
+        
     </style>
 </head>
 <body>
+    
     <img src="{{ asset('assets/image/bg4.jpeg') }}" alt="Image" style="position: absolute; top: 70px;  width: 200px; height: auto;">
     <div class="login-form">
         <form method="POST" action="/login" style="margin-top: 50px;">
@@ -62,9 +65,13 @@
             </div>
             <button type="submit">Login</button>
         </form>
+        
     </div>
     <img src="{{ asset('assets/image/bg1.jpeg') }}" alt="Image" style="position: absolute; bottom: -100px; right: -60px; width: 300px; height: auto;">
     <img src="{{ asset('assets/image/bg2.jpeg') }}" alt="Image" style="position: absolute; bottom: -100px; left: -60px; width: 300px; height: auto;">
     <img src="{{ asset('assets/image/bg3.jpeg') }}" alt="Image" style="position: absolute; top: -110px; left: -50px; width: 300px; height: auto;">
+    <button style="position: absolute; top: 10px; right: 10px;background-color: #1DC6AB; border: none; border-radius: 20px;width: 150px;height: 40px;color: white;cursor: pointer;" onclick="window.location.href = '{{ route('dashboard') }}'">Dashboard Utama</button>
+    
+    
 </body>
 </html>
