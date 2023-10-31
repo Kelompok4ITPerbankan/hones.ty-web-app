@@ -6,7 +6,7 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: rgba(51, 51, 51, 0.4); /* Transparan dengan warna abu-abu gelap */
+            background-color: rgba(51, 51, 51, 0.9); /* Transparan dengan warna abu-abu gelap */
             padding-top: 20px;
             transition: 0.5s;
             overflow-x: hidden; /* Menyembunyikan overflow horizontal saat ditutup */
@@ -92,5 +92,7 @@
             margin-left: 30px;
             
         }
+
+        
 
         
