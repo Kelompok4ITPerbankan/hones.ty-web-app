@@ -6,8 +6,8 @@
 
 <!-- Navigasi Kiri -->
 <div id="mySidenav" class="sidenav">
-    <button class="btn btn-primary" style="background-color: rgba(51, 51, 51, 0.4);width: 200px ;border: none; border-radius: 10px;margin-top: 30px;margin-left: 27px">User</button>
-    <button class="btn btn-primary" style="background-color: rgba(51, 51, 51, 0.4);width: 200px  ;border: none; border-radius: 10px; margin-top: 40px; margin-left: 27px"
+    <h4 style="margin-left: 100px;margin-top: 40px; color: white">User</h4>
+    <button class="btn btn-primary" style="background-color: rgba(51, 51, 51, 0.9);  ;width: 200px  ;border: none; border-radius: 10px; margin-top: 40px; margin-left: 27px"
      onclick="window.location.href = '{{ route('login') }}'">Keluar</button>
 
     

@@ -19,5 +19,11 @@ class AuthController extends Controller
         }
         return redirect('/login')->with('error', 'Login gagal. Periksa kembali username dan password Anda.');
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('/login');
+    }
     
 }

@@ -79,7 +79,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="{{ url('/produk') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ url('/admin/produk') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group mt-3">
